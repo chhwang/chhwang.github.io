@@ -1,245 +1,520 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Changho Hwang | changhohwang@microsoft.com</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-
-    <link rel="stylesheet" type="text/css" href="reset-fonts-grids.css" media="all" /> 
-    <link rel="stylesheet" type="text/css" href="resume.css" media="all" />
+    <meta name="description" content="Changho Hwang - Senior Researcher at Microsoft Research, specializing in scalable AI and large-scale GPU systems">
+    <meta name="keywords" content="Changho Hwang, Microsoft Research, AI, GPU systems, machine learning, distributed systems">
+    
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        /* Header styles */
+        header {
+            border-bottom: 3px solid #0066cc;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .header-content {
+            display: block;
+        }
+        
+        .header-info h1 {
+            font-size: 2.5em;
+            color: #0066cc;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+        
+        .header-info h2 {
+            font-size: 1.3em;
+            color: #666;
+            font-weight: 400;
+        }
+        
+        .contact-info {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 8px;
+            font-size: 1em;
+            font-weight: 400;
+            margin-right: 0;
+        }
+        
+        .contact-info a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Section styles */
+        section {
+            margin-bottom: 25px;
+        }
+        
+        .section-content {
+            display: block;
+        }
+        
+        .section-title {
+            font-size: 1.2em;
+            color: #0066cc;
+            font-weight: 600;
+            font-style: italic;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section-body h2 {
+            font-size: 0.95em;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .section-body h3 {
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .section-body h4 {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 5px;
+            font-weight: 400;
+        }
+        
+        .section-body p {
+            font-size: 1em;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        
+        .job {
+            margin-bottom: 8px;
+            padding-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        
+        .job.last {
+            border-bottom: none;
+        }
+        
+        .job-content {
+            flex: 1;
+        }
+        
+        .job-content h2 {
+            font-size: 0.95em;
+            color: #333;
+            margin-bottom: 3px;
+        }
+        
+        .job-content h3 {
+            font-size: 0.9em;
+            color: #0066cc;
+            margin-bottom: 3px;
+        }
+        
+        .job-role {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 3px;
+        }
+        
+        .job-role h3 {
+            margin-bottom: 0;
+        }
+        
+        .job-role-date {
+            font-size: 0.85em;
+            color: #666;
+            font-style: italic;
+            margin-left: 20px;
+            white-space: nowrap;
+        }
+        
+        .job-date {
+            font-size: 0.85em;
+            color: #666;
+            font-style: italic;
+            margin-left: 20px;
+            white-space: nowrap;
+        }
+        
+        .job h2 {
+            font-size: 0.95em;
+            color: #333;
+            margin-bottom: 3px;
+        }
+        
+        .job h3 {
+            font-size: 0.9em;
+            color: #0066cc;
+            margin-bottom: 3px;
+        }
+        
+        .job h4 {
+            font-size: 0.85em;
+            color: #666;
+            font-style: italic;
+        }
+        
+        /* Publication styles */
+        .publication {
+            margin-bottom: 15px;
+        }
+        
+        .publication h3 {
+            font-size: 0.95em;
+            margin-bottom: 3px;
+        }
+        
+        .publication h3 a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .publication h3 a:hover {
+            text-decoration: underline;
+        }
+        
+        .publication h4 {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 2px;
+            line-height: 1.3;
+        }
+        
+        .publication h4 strong {
+            color: #333;
+        }
+        
+        /* Footer */
+        footer {
+            border-top: 1px solid #ddd;
+            padding: 20px 0;
+            text-align: center;
+            color: #666;
+            margin-top: 40px;
+        }
+        
+        footer a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .job {
+                flex-direction: column;
+            }
+            
+            .job-date {
+                margin-left: 0;
+                margin-top: 5px;
+            }
+            
+            .job-role {
+                flex-direction: column;
+            }
+            
+            .job-role-date {
+                margin-left: 0;
+                margin-top: 2px;
+            }
+            
+            .header-info h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
 </head>
 
 <body>
-
-<div id="doc2" class="yui-t7">
-    <div id="inner">
-        <div id="hd">
-            <div class="yui-gc">
-                <div class="yui-u first">
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="header-info">
                     <h1>Changho Hwang</h1>
-                    <h2>Senior Researcher @ Microsoft Research</h2>
-                    <br/>
-                </div><!--// .yui-u first -->
-
-                <div class="yui-u">
                     <div class="contact-info">
-                        <!--<h3><a id="pdf" href="#">Download PDF</a></h3>-->
                         <h3><a href="https://scholar.google.co.kr/citations?user=Ww9Qh48AAAAJ&hl=ko">Google Scholar</a></h3>
                         <h3><a href="https://github.com/chhwang">GitHub</a></h3>
                         <h3><a href="https://www.linkedin.com/in/changho-hwang-7993b0b4/">LinkedIn</a></h3>
-                        <br/>
                         <h3>Email: <a href="mailto:changhohwang@microsoft.com">changhohwang@microsoft.com</a></h3>
-                    </div><!--// .contact-info -->
+                    </div>
                 </div>
+            </div>
+        </header>
 
-            </div><!--// .yui-gc -->
-        </div><!--// hd -->
+        <main>
 
-        <div id="bd">
-            <div id="yui-main">
-                <div class="yui-b">
+            <section>
+                <div class="section-content">
+                    <div class="section-title">Profile</div>
+                    <div class="section-body">
+                        <p>
+                            Senior Researcher at Microsoft, studying scalable AI and large-scale GPU systems.
+                            Received Ph.D. in Electrical Engineering from KAIST in February 2022, advised by Prof. <a href="https://tnet.snu.ac.kr/~kyoungsoo/">KyoungSoo Park</a>.
+                        </p>
+                    </div>
+                </div>
+            </section>
 
+            <section>
+                <div class="section-content">
+                    <div class="section-title">Research Interest</div>
+                    <div class="section-body">
+                        <p>Artificial Intelligence, scalable networked systems, system performance optimization, GPU systems</p>
+                    </div>
+                </div>
+            </section>
 
-<div class="yui-gf">
-    <div class="yui-u first">
-	    <h2>Profile</h2>
-	</div>
-	<div class="yui-u">
-	    <p class="enlarge">
-		Senior Researcher at Microsoft, studying scalable AI and large-scale GPU systems.
-		Received Ph.D. in Electrical Engineering from KAIST in February 2022, advised by Prof. <a href="https://tnet.snu.ac.kr/~kyoungsoo/">KyoungSoo Park</a>.
-	    </p>
-	</div>
-</div><!--// .yui-gf -->
-
-
-<div class="yui-gf">
-	<div class="yui-u first">
-	    <h2>Research Interest</h2>
-	</div>
-	<div class="yui-u">
-	    <h2>Artificial Intelligence, scalable networked systems, system performance optimization, GPU systems</h2>
-	</div>
-</div><!--// .yui-gf -->
-
-    
-<div class="yui-gf">
-	<div class="yui-u first">
-	    <h2>Education</h2>
-	</div><!--// .yui-u -->
-	<div class="yui-u">
-	    <h2><strong>Korea Advanced Institute of Science and Technology (KAIST)</strong>, Daejeon, Republic of Korea</h2>
-	    <div class="job">
-		<h3><strong>Ph.D. (Integrated M.S.-Ph.D. Program)</strong>, Electrical Engineering</h3>
-		<h4>Advisor: KyoungSoo Park<br/>Feb 2017 &mdash; Feb 2022</h4>
-	    </div>
-
-	    <div class="job">
-		<h3><strong>M.S. student</strong>, Electrical Engineering</h3>
-		<h4>Advisor: KyoungSoo Park<br/>Feb 2016 &mdash; Jan 2017</h4>
-	    </div>
-
-	    <div class="job last">
-		<h3><strong>B.S.</strong>, Electrical Engineering (major) and Computer Science (minor)</h3>
-		<h4>Feb 2012 &mdash; Jan 2016</h4>
-	    </div>
-	</div><!--// .yui-u -->
-</div><!--// .yui-gf -->
+            <section>
+                <div class="section-content">
+                    <div class="section-title">Education</div>
+                    <div class="section-body">
+                        <h2><strong>Korea Advanced Institute of Science and Technology (KAIST)</strong>, Daejeon, Republic of Korea</h2>
+                        <div class="job">
+                            <div class="job-content">
+                                <h3><strong>Ph.D. (Integrated M.S.-Ph.D. Program)</strong>, Electrical Engineering</h3>
+                            </div>
+                            <div class="job-date">Feb 2017 — Feb 2022</div>
+                        </div>
+                        <div class="job">
+                            <div class="job-content">
+                                <h3><strong>M.S. student</strong>, Electrical Engineering</h3>
+                            </div>
+                            <div class="job-date">Feb 2016 — Jan 2017</div>
+                        </div>
+                        <div class="job last">
+                            <div class="job-content">
+                                <h3><strong>B.S.</strong>, Electrical Engineering (major) and Computer Science (minor)</h3>
+                            </div>
+                            <div class="job-date">Feb 2012 — Jan 2016</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
 
-<div class="yui-gf">
-	<div class="yui-u first">
-	    <h2>Professional Experience</h2>
-	</div><!--// .yui-u -->
-	<div class="yui-u">
-	    <div class="job">
-		<h2><strong>Microsoft Research</strong>, Vancouver, BC, Canada</h2>
-		<h3><strong>Senior Researcher</strong></h3>
-		<h4>Jan 2024 &mdash; Present</h4>
-	    </div>
-	    <div class="job">
-		<h2><strong>Microsoft Research</strong>, Beijing, China</h2>
-		<h3><strong>Senior Researcher</strong>, Networking Infrastructure Group</h3>
-		<h4>Dec 2023 &mdash; Dec 2023</h4>
-	    </div>
-	    <div class="job">
-		<h2><strong>Microsoft Research</strong>, Beijing, China</h2>
-		<h3><strong>Researcher 2</strong>, Networking Infrastructure Group</h3>
-		<h4>Mar 2022 &mdash; Nov 2023</h4>
-	    </div>
-	    <div class="job last">
-		<h2><strong>Microsoft Research</strong>, Beijing, China</h2>
-		<h3><strong>Research Intern</strong>, Networking Research Group</h3>
-		<h4>Jul 2019 &mdash; Sep 2019</h4>
-		<h4>Dec 2018 &mdash; Feb 2019</h4>
-	    </div>
-	</div><!--// .yui-u -->
-</div><!--// .yui-gf -->
+            <section>
+                <div class="section-content">
+                    <div class="section-title">Professional Experience</div>
+                    <div class="section-body">
+                        <div class="job">
+                            <div class="job-content">
+                                <h2><strong>Microsoft Research</strong>, Vancouver, BC, Canada</h2>
+                                <div class="job-role">
+                                    <h3><strong>Senior Researcher</strong></h3>
+                                    <div class="job-role-date">Jan 2024 — Present</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="job last">
+                            <div class="job-content">
+                                <h2><strong>Microsoft Research</strong>, Beijing, China</h2>
+                                <div class="job-role">
+                                    <h3><strong>Senior Researcher</strong>, Networking Infrastructure Group</h3>
+                                    <div class="job-role-date">Dec 2023 — Dec 2023</div>
+                                </div>
+                                <div class="job-role">
+                                    <h3><strong>Researcher 2</strong>, Networking Infrastructure Group</h3>
+                                    <div class="job-role-date">Mar 2022 — Nov 2023</div>
+                                </div>
+                                <div class="job-role">
+                                    <h3><strong>Research Intern</strong>, Networking Research Group</h3>
+                                    <div class="job-role-date">Jul 2019 — Sep 2019 ; Dec 2018 — Feb 2019</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-<div class="yui-gf">
-	<div class="yui-u first">
-	    <h2>Publications</h2>
-	</div>
-	<div class="yui-u">
-	    <h3><a href="https://arxiv.org/pdf/2308.12066.pdf">Pre-gated MoE: An Algorithm-System Co-Design for Fast and Scalable Mixture-of-Expert Inference</a></h3>
-	    <h4>Ranggi Hwang, Jianyu Wei, Shijie Cao, <strong>Changho Hwang</strong>, Xiaohu Tang, Ting Cao, and Mao Yang<h4>
-	    <h4>In <i>the 51st International Symposium on Computer Architecture (ISCA)</i><h4>
-	    <h4>Buenos Aires, Argentina, June 2024</h4>
-	    <br/>
+            <section>
+                <div class="section-content">
+                    <div class="section-title">Publications</div>
+                    <div class="section-body">
+                        <div class="publication">
+                            <h3><a href="https://arxiv.org/pdf/2308.12066.pdf">Pre-gated MoE: An Algorithm-System Co-Design for Fast and Scalable Mixture-of-Expert Inference</a></h3>
+                            <h4>Ranggi Hwang, Jianyu Wei, Shijie Cao, <strong>Changho Hwang</strong>, Xiaohu Tang, Ting Cao, and Mao Yang</h4>
+                            <h4>In <i>the 51st International Symposium on Computer Architecture (ISCA)</i></h4>
+                            <h4>Buenos Aires, Argentina, June 2024</h4>
+                        </div>
 
-	    <h3><a href="https://arxiv.org/pdf/2206.03382.pdf">Tutel: Adaptive Mixture-of-Experts at Scale</a></h3>
-	    <h4><u><strong>Changho Hwang</strong>, Wei Cui, Yifan Xiong, Ziyue Yang,</u> Ze Liu, Han Hu, Zilong Wang, Rafael Salas, Jithin Jose, Prabhat Ram, Joe Chau, Peng Cheng, Fan Yang, Mao Yang, and Yongqiang Xiong<h4>
-	    <h4>In <i>the 6th Conference on Machine Learning and Systems (MLSys)</i><h4>
-	    <h4>Miami, FL, June 2023</h4>
-	    <br/>
+                        <div class="publication">
+                            <h3><a href="https://arxiv.org/pdf/2206.03382.pdf">Tutel: Adaptive Mixture-of-Experts at Scale</a></h3>
+                            <h4><u><strong>Changho Hwang</strong>, Wei Cui, Yifan Xiong, Ziyue Yang,</u> Ze Liu, Han Hu, Zilong Wang, Rafael Salas, Jithin Jose, Prabhat Ram, Joe Chau, Peng Cheng, Fan Yang, Mao Yang, and Yongqiang Xiong</h4>
+                            <h4>In <i>the 6th Conference on Machine Learning and Systems (MLSys)</i></h4>
+                            <h4>Miami, FL, June 2023</h4>
+                        </div>
 
-	    <h3><a href="https://www.usenix.org/conference/nsdi23/presentation/hwang">ARK: GPU-driven Code Execution for Distributed Deep Learning</a></h3>
-	    <h4><strong>Changho Hwang</strong>, KyoungSoo Park, Ran Shu, Xinyuan Qu, Peng Cheng, and Yongqiang Xiong<h4>
-	    <h4>In <i>the 20th USENIX Symposium on Networked Systems Design and Implementation (NSDI)</i><h4>
-	    <h4>Boston, MA, April 2023</h4>
-	    <br/>
+                        <div class="publication">
+                            <h3><a href="https://www.usenix.org/conference/nsdi23/presentation/hwang">ARK: GPU-driven Code Execution for Distributed Deep Learning</a></h3>
+                            <h4><strong>Changho Hwang</strong>, KyoungSoo Park, Ran Shu, Xinyuan Qu, Peng Cheng, and Yongqiang Xiong</h4>
+                            <h4>In <i>the 20th USENIX Symposium on Networked Systems Design and Implementation (NSDI)</i></h4>
+                            <h4>Boston, MA, April 2023</h4>
+                        </div>
 
-	    <h3><a href="https://www.usenix.org/conference/nsdi21/presentation/hwang">Elastic Resource Sharing for Distributed Deep Learning</a></h3>
-	    <h4><strong>Changho Hwang</strong>, Taehyun Kim, Sunghyun Kim, Jinwoo Shin, and KyoungSoo Park<h4>
-	    <h4>In <i>the 18th USENIX Symposium on Networked Systems Design and Implementation (NSDI)</i><h4>
-	    <h4>Virtual Event, April 2021</h4>
-	    <br/>
+                        <div class="publication">
+                            <h3><a href="https://www.usenix.org/conference/nsdi21/presentation/hwang">Elastic Resource Sharing for Distributed Deep Learning</a></h3>
+                            <h4><strong>Changho Hwang</strong>, Taehyun Kim, Sunghyun Kim, Jinwoo Shin, and KyoungSoo Park</h4>
+                            <h4>In <i>the 18th USENIX Symposium on Networked Systems Design and Implementation (NSDI)</i></h4>
+                            <h4>Virtual Event, April 2021</h4>
+                        </div>
 
-	    <h3><a href="https://dl.acm.org/doi/10.5555/3305381.3305589">Confident Multiple Choice Learning</a></h3>
-	    <h4>Kimin Lee, <strong>Changho Hwang</strong>, KyoungSoo Park, and Jinwoo Shin<h4>
-	    <h4>In <i>the 34th International Conference on Machine Learning (ICML)</i><h4>
-	    <h4>Sydney, Austrailia, August 2017</h4>
-	    <br/>
+                        <div class="publication">
+                            <h3><a href="https://dl.acm.org/doi/10.5555/3305381.3305589">Confident Multiple Choice Learning</a></h3>
+                            <h4>Kimin Lee, <strong>Changho Hwang</strong>, KyoungSoo Park, and Jinwoo Shin</h4>
+                            <h4>In <i>the 34th International Conference on Machine Learning (ICML)</i></h4>
+                            <h4>Sydney, Australia, August 2017</h4>
+                        </div>
 
-	    <h3><a href="https://dl.acm.org/doi/10.5555/3154630.3154638">APUNet: Revitalizing GPU as Packet Processing Accelerator</a></h3>
-	    <h4>Younghwan Go, Muhammad Jamshed, YoungGyoun Moon, <strong>Changho Hwang</strong>, and KyoungSoo Park<h4>
-	    <h4>In <i>the 14th USENIX Symposium on Networked Systems Design and Implementation (NSDI)</i><h4>
-	    <h4>Boston, MA, March 2017</h4>
-	    <br/>
-	</div>
-</div><!--// .yui-gf -->
+                        <div class="publication">
+                            <h3><a href="https://dl.acm.org/doi/10.5555/3154630.3154638">APUNet: Revitalizing GPU as Packet Processing Accelerator</a></h3>
+                            <h4>Younghwan Go, Muhammad Jamshed, YoungGyoun Moon, <strong>Changho Hwang</strong>, and KyoungSoo Park</h4>
+                            <h4>In <i>the 14th USENIX Symposium on Networked Systems Design and Implementation (NSDI)</i></h4>
+                            <h4>Boston, MA, March 2017</h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-<div class="yui-gf">
-	<div class="yui-u first">
-	    <h2>Preprints</h2>
-	</div>
-	<div class="yui-u">
-	    <h3><a href="https://arxiv.org/abs/2504.09014">MSCCL++: Rethinking GPU Communication Abstractions for Cutting-edge AI Applications</a></h3>
-	    <h4>Aashaka Shah, Abhinav Jangda, Binyang Li, Caio Rocha, <strong>Changho Hwang</strong>, Jithin Jose, Madan Musuvathi, Olli Saarikivi, Peng Cheng, Qinghua Zhou, Roshan Dathathri, Saeed Maleki, Ziyue Yang<h4>
-	    <h4><i>arXiv</i><h4>
-	    <h4>April 2025</h4>
-	    <br/>
+            <section>
+                <div class="section-content">
+                    <div class="section-title">Preprints</div>
+                    <div class="section-body">
+                        <div class="publication">
+                            <h3><a href="https://arxiv.org/abs/2504.09014">MSCCL++: Rethinking GPU Communication Abstractions for Cutting-edge AI Applications</a></h3>
+                            <h4>Aashaka Shah, Abhinav Jangda, Binyang Li, Caio Rocha, <strong>Changho Hwang</strong>, Jithin Jose, Madan Musuvathi, Olli Saarikivi, Peng Cheng, Qinghua Zhou, Roshan Dathathri, Saeed Maleki, Ziyue Yang</h4>
+                            <h4><i>arXiv</i></h4>
+                            <h4>April 2025</h4>
+                        </div>
 
-	    <h3><a href="https://arxiv.org/abs/2503.01066">Alchemist: Towards the Design of Efficient Online Continual Learning System</a></h3>
-	    <h4>Yuyang Huang, Yuhan Liu, Haryadi S. Gunawi, Beibin Li, <strong>Changho Hwang</strong><h4>
-	    <h4><i>arXiv</i><h4>
-	    <h4>March 2025</h4>
-	    <br/>
-	</div>
-</div><!--// .yui-gf -->
+                        <div class="publication">
+                            <h3><a href="https://arxiv.org/abs/2503.01066">Alchemist: Towards the Design of Efficient Online Continual Learning System</a></h3>
+                            <h4>Yuyang Huang, Yuhan Liu, Haryadi S. Gunawi, Beibin Li, <strong>Changho Hwang</strong></h4>
+                            <h4><i>arXiv</i></h4>
+                            <h4>March 2025</h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-<div class="yui-gf">
-	<div class="yui-u first">
-	    <h2>Workshops &amp; Posters</h2>
-	</div>
-	<div class="yui-u">
-	    <h3><a href="https://hotinfra24.github.io/papers/hotinfra24-final2.pdf">Immediate Communication for Distributed AI Tasks</a></h3>
-	    <h4>Jihao Xin, Seongjong Bae, KyoungSoo Park, Marco Canini, <strong>Changho Hwang</strong><h4>
-	    <h4>In <i>the 2nd Workshop on Hot Topics in System Infrastructure (HotInfra)</i><h4>
-	    <h4>Austin, TX, November 2024</h4>
-	    <br/>
+            <section>
+                <div class="section-content">
+                    <div class="section-title">Workshops & Posters</div>
+                    <div class="section-body">
+                        <div class="publication">
+                            <h3><a href="https://hotinfra24.github.io/papers/hotinfra24-final2.pdf">Immediate Communication for Distributed AI Tasks</a></h3>
+                            <h4>Jihao Xin, Seongjong Bae, KyoungSoo Park, Marco Canini, <strong>Changho Hwang</strong></h4>
+                            <h4>In <i>the 2nd Workshop on Hot Topics in System Infrastructure (HotInfra)</i></h4>
+                            <h4>Austin, TX, November 2024</h4>
+                        </div>
 
-	    <h3><a href="pubs/mlarchsys22_hwang.pdf">Towards GPU-driven Code Execution for Distributed Deep Learning</a> <i>(Awarded Best Paper)</i></h3>
-	    <h4><strong>Changho Hwang</strong>, KyoungSoo Park, Ran Shu, Xinyuan Qu, Peng Cheng, and Yongqiang Xiong<h4>
-	    <h4>In <i>the 3rd Machine Learning for Computer Architecture and Systems (MLArchSys@ISCA)</i><h4>
-	    <h4>New York City, NY, June 2022</h4>
-	    <br/>
+                        <div class="publication">
+                            <h3><a href="pubs/mlarchsys22_hwang.pdf">Towards GPU-driven Code Execution for Distributed Deep Learning</a> <i>(Awarded Best Paper)</i></h3>
+                            <h4><strong>Changho Hwang</strong>, KyoungSoo Park, Ran Shu, Xinyuan Qu, Peng Cheng, and Yongqiang Xiong</h4>
+                            <h4>In <i>the 3rd Machine Learning for Computer Architecture and Systems (MLArchSys@ISCA)</i></h4>
+                            <h4>New York City, NY, June 2022</h4>
+                        </div>
 
-	    <h3><a href="https://dl.acm.org/doi/10.1145/3476886.3477515">Accelerating GNN Training with Locality-Aware Partial Execution</a> <i>(Awarded Best Paper)</i></h3>
-	    <h4>Taehyun Kim, <strong>Changho Hwang</strong>, KyoungSoo Park, Zhiqi Lin, Peng Cheng, Youshan Miao, Lingxiao Ma, and Yongqiang Xiong<h4>
-	    <h4>In <i>the 12th ACM SIGOPS Asia-Pacific Workshop on Systems (APSys)</i><h4>
-	    <h4>Virtual Event, August 2021</h4>
-	    <br/>
+                        <div class="publication">
+                            <h3><a href="https://dl.acm.org/doi/10.1145/3476886.3477515">Accelerating GNN Training with Locality-Aware Partial Execution</a> <i>(Awarded Best Paper)</i></h3>
+                            <h4>Taehyun Kim, <strong>Changho Hwang</strong>, KyoungSoo Park, Zhiqi Lin, Peng Cheng, Youshan Miao, Lingxiao Ma, and Yongqiang Xiong</h4>
+                            <h4>In <i>the 12th ACM SIGOPS Asia-Pacific Workshop on Systems (APSys)</i></h4>
+                            <h4>Virtual Event, August 2021</h4>
+                        </div>
 
-	    <h3><a href="pubs/emdl19_park.pdf">A Case for Two-stage Inference with Knowledge Caching</a></h3>
-	    <h4>Geonha Park, <strong>Changho Hwang</strong>, and KyoungSoo Park<h4>
-	    <h4>In <i>the 3rd International Workshop on Embedded and Mobile Deep Learning (EMDL@MobiSys)</i><h4>
-	    <h4>Seoul, Republic of Korea, June 2019</h4>
-	    <br/>
+                        <div class="publication">
+                            <h3><a href="pubs/emdl19_park.pdf">A Case for Two-stage Inference with Knowledge Caching</a></h3>
+                            <h4>Geonha Park, <strong>Changho Hwang</strong>, and KyoungSoo Park</h4>
+                            <h4>In <i>the 3rd International Workshop on Embedded and Mobile Deep Learning (EMDL@MobiSys)</i></h4>
+                            <h4>Seoul, Republic of Korea, June 2019</h4>
+                        </div>
 
-	    <h3><a href="pubs/osdi18_poster_hwang.pdf">Efficient Resource Sharing for Distributed Deep Learning</a></h3>
-	    <h4><strong>Changho Hwang</strong>, Taehyun Kim, Kyuho Son, Jinwoo Shin, and KyoungSoo Park<h4>
-	    <h4>In <i>the 13th USENIX Symposium on Operating Systems Design and Implementation (OSDI)</i> &mdash; poster<h4>
-	    <h4>Carlsbad, CA, October 2018</h4>
-	    <br/>
-	</div>
-</div><!--// .yui-gf -->
-
-
-<div class="yui-gf last">
-	<div class="yui-u first">
-	    <h2>Awards</h2>
-	</div>
-	<div class="yui-u">
-	    <div class="job last">
-		<h2><strong>The 28th Humantech Paper Award, Gold Prize</strong>, Computer Science &amp; Engineering</h2>
-		<h4><strong>Changho Hwang</strong> and KyoungSoo Park<h4>
-		<h4>February 2022</h4>
-	    </div>
-	</div>
-</div><!--// .yui-gf -->
+                        <div class="publication">
+                            <h3><a href="pubs/osdi18_poster_hwang.pdf">Efficient Resource Sharing for Distributed Deep Learning</a></h3>
+                            <h4><strong>Changho Hwang</strong>, Taehyun Kim, Kyuho Son, Jinwoo Shin, and KyoungSoo Park</h4>
+                            <h4>In <i>the 13th USENIX Symposium on Operating Systems Design and Implementation (OSDI)</i> — poster</h4>
+                            <h4>Carlsbad, CA, October 2018</h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
 
-                </div><!--// .yui-b -->
-            </div><!--// yui-main -->
-        </div><!--// bd -->
+            <section>
+                <div class="section-content">
+                    <div class="section-title">Awards</div>
+                    <div class="section-body">
+                        <div class="job last">
+                            <h2><strong>The 28th Humantech Paper Award, Gold Prize</strong>, Computer Science & Engineering</h2>
+                            <h4><strong>Changho Hwang</strong> and KyoungSoo Park</h4>
+                            <h4>February 2022</h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-        <div id="ft">
-            <p>Changho Hwang &mdash; <a href="mailto:changhohwang@microsoft.com">changhohwang@microsoft.com</a></p>
-        </div><!--// footer -->
+        <footer>
+            <p>Changho Hwang — <a href="mailto:changhohwang@microsoft.com">changhohwang@microsoft.com</a></p>
+        </footer>
     </div>
 </body>
 
